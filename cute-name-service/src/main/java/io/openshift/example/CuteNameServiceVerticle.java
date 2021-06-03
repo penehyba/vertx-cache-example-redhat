@@ -1,6 +1,6 @@
 package io.openshift.example;
 
-import io.vertx.core.Future;
+import io.vertx.core.Promise;
 import io.vertx.core.json.JsonObject;
 import io.vertx.reactivex.CompletableHelper;
 import io.vertx.reactivex.core.AbstractVerticle;
@@ -15,7 +15,7 @@ public class CuteNameServiceVerticle extends AbstractVerticle {
     private final static Set<String> used = new HashSet<>();
 
     @Override
-    public void start(Future<Void> future) {
+    public void start(Promise<Void> future) {
         io.vertx.reactivex.ext.web.Router router = io.vertx.reactivex.ext.web.Router.router(vertx);
         router.get("/api/name").handler(this::getCuteName);
         router.get("/health").handler(rc -> rc.response().end("OK"));

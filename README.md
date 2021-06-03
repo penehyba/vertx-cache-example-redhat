@@ -1,3 +1,5 @@
+https://appdev.openshift.io/docs/vertx-runtime.html#example-cache-vertx
+
 # vertx-cache-example
 
 This example demonstrates how to use a cache server from an Eclipse Vert.x application.
@@ -11,7 +13,7 @@ oc apply -f service.cache.yml
 ```
 3. Deploy the example with:
 ```bash
-mvn fabric8:deploy -Popenshift
+mvn oc:deploy -Popenshift
 ```
 4. Access the exposed route (`greeting-service`) - a HTML page to use the example is exposed.
 
@@ -20,5 +22,5 @@ mvn fabric8:deploy -Popenshift
 Run integrations test using:
 
 ```bash
-mvn verify -Popenshift,openshift-it
+mvn clean verify -Popenshift,openshift-it
 ```
