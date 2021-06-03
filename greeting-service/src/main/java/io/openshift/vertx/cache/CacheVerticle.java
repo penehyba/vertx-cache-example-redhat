@@ -2,7 +2,7 @@ package io.openshift.vertx.cache;
 
 import io.reactivex.Completable;
 import io.reactivex.Single;
-import io.vertx.core.Future;
+import io.vertx.core.Promise;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
@@ -27,7 +27,7 @@ public class CacheVerticle extends AbstractVerticle {
     private final Logger LOGGER = LoggerFactory.getLogger("Cache-Verticle");
 
     @Override
-    public void start(Future<Void> future) {
+    public void start(Promise<Void> future) {
         ttl = config().getInteger("cache.ttl", 5);
         // HTTP API
         Router router = Router.router(vertx);
