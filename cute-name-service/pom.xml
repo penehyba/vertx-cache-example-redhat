@@ -108,9 +108,9 @@
                   <exclude>jkube-maven-scm</exclude>
                 </excludes>
                 <config>
-                  <jukbe-healthcheck-vertx>
+                  <jkube-healthcheck-vertx>
                     <path>/health</path>
-                  </jukbe-healthcheck-vertx>
+                  </jkube-healthcheck-vertx>
                 </config>
               </enricher>
               <resources>

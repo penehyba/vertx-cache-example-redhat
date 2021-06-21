@@ -14,7 +14,10 @@
   </modules>
 
   <properties>
-    <vertx.version>4.0.3.redhat-00002</vertx.version>
+    <vertx.version>4.1.0.redhat-00004</vertx.version>
+    <release.candidate.repository>
+      http://indy.psi.redhat.com/api/content/maven/group/static
+    </release.candidate.repository>
     <infinispan.version>9.4.19.Final-redhat-00001</infinispan.version>
     <vertx.verticle>io.openshift.vertx.cache.CacheVerticle</vertx.verticle>
 
@@ -100,6 +103,19 @@
       <name>Red Hat Early Access Repository</name>
       <url>https://maven.repository.redhat.com/earlyaccess/all/</url>
     </repository>
+    <repository>
+      <id>redhat-build</id>
+      <name>Red Hat builds Repository</name>
+      <url>${release.candidate.repository}</url>
+      <layout>default</layout>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
   </repositories>
 
   <pluginRepositories>
@@ -112,6 +128,19 @@
       <id>redhat-early-access</id>
       <name>Red Hat Early Access Repository</name>
       <url>https://maven.repository.redhat.com/earlyaccess/all/</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>redhat-build</id>
+      <name>Red Hat builds Repository</name>
+      <url>${release.candidate.repository}</url>
+      <layout>default</layout>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
     </pluginRepository>
   </pluginRepositories>
 
@@ -126,4 +155,5 @@
       </plugins>
     </pluginManagement>
   </build>
+
 </project>

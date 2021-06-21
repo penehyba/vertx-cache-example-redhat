@@ -1,3 +1,5 @@
+https://appdev.openshift.io/docs/vertx-runtime.html#example-cache-vertx
+
 # vertx-cache-example
 
 This example demonstrates how to use a cache server from an Eclipse Vert.x application.
